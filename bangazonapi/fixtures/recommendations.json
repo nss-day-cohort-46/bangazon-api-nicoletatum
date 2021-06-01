@@ -1,0 +1,29 @@
+[
+    {
+        "model": "bangazonapi.recommendation",
+        "pk": 1,
+        "fields": {
+            "customer": 4,
+            "product": 2,
+            "recommender": 5
+        }
+    },
+    {
+        "model": "bangazonapi.recommendation",
+        "pk": 2,
+        "fields": {
+            "customer": 4,
+            "product": 1,
+            "recommender": 6
+        }
+    },
+    {
+        "model": "bangazonapi.recommendation",
+        "pk": 3,
+        "fields": {
+            "customer": 5,
+            "product":3,
+            "recommender":7
+        }
+    }
+]
