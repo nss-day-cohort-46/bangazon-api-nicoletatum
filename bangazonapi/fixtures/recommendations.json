@@ -23,7 +23,7 @@
         "fields": {
             "customer": 5,
             "product":3,
-            "recommender":7
+            "recommender":4
         }
     }
 ]
