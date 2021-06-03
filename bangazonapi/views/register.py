@@ -14,7 +14,7 @@ def login_user(request):
     '''Handles the authentication of a user
 
     Method arguments:
-      request -- The full HTTP request object
+        request -- The full HTTP request object
     '''
 
     body = request.body.decode('utf-8')
