@@ -60,9 +60,13 @@ class Product(SafeDeleteModel):
         ratings = ProductRating.objects.filter(product=self)
         total_rating = 0
         for rating in ratings:
+            
             total_rating += rating.rating
 
-        avg = total_rating / len(ratings)
+        try: 
+            avg = total_rating / len(ratings)
+        except:
+            avg = 0
         return avg
 
     class Meta:
