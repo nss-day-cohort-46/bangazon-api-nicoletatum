@@ -33,30 +33,10 @@ def favseller_list(request):
 
             dataset = db_cursor.fetchall()
 
-            # Take the flat data from the database, and build the
-            # following data structure for each gamer.
-            #
-            # {
-            #     1: {
-            #         "id": 1,
-            #         "full_name": "Admina Straytor",
-            #         "games": [
-            #             {
-            #                 "id": 1,
-            #                 "title": "Foo",
-            #                 "maker": "Bar Games",
-            #                 "skill_level": 3,
-            #                 "number_of_players": 4,
-            #                 "gametype_id": 2
-            #             }
-            #         ]
-            #     }
-            # }
-
             fav_seller = {}
 
             for row in dataset:
-                # Crete a Game instance and set its properties
+                # Crete a seller instance and set its properties
                 seller = Customer()
                 seller.seller_name = row["seller_name"]
                 uid = row["customer_id"]
@@ -66,7 +46,7 @@ def favseller_list(request):
 
                 # If the user's id is already a key in the dictionary...
                 if uid in fav_seller:
-                    # Add the current game to the `games` list for it
+                    # Add the current seller to the `sellers` list for it
                     fav_seller[uid]['sellers'].append(seller)
 
                 else:
