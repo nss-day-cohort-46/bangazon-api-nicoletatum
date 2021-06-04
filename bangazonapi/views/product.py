@@ -250,6 +250,7 @@ class Products(ViewSet):
         order = self.request.query_params.get('order_by', None)
         direction = self.request.query_params.get('direction', None)
         number_sold = self.request.query_params.get('number_sold', None)
+        location = self.request.query_params.get('location', None)
 
         if order is not None:
             order_filter = order
@@ -262,6 +263,9 @@ class Products(ViewSet):
 
         if category is not None:
             products = products.filter(category__id=category)
+        
+        if location is  not None:
+            products = products.filter(location__icontains=location)
 
         if quantity is not None:
             products = products.order_by("-created_date")[:int(quantity)]
